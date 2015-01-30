@@ -3,7 +3,7 @@
 ### DBF format
 dBASE III/IV
 FoxPro not supported
-### Config file example
+### config.json example
 
 ```
 {
