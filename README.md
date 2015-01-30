@@ -1,7 +1,8 @@
 # DBF to Postgresql Converter
 ## 
 ### DBF format
-dBASE III/IV (FoxPro 'date' not supported)
+dBASE III/IV
+FoxPro not supported
 ### Config file example
 
 ```
