@@ -187,9 +187,10 @@ namespace DBF2PSQL
 
         static void Main(string[] args)
         {
+            const string defaultConfig = "config.json";
             Console.Title = "DBF2PostgreSQL Converter v1.0";
             Console.ForegroundColor = ConsoleColor.Green;
-            string config = args.Length > 0 ? args[0] : "config.json";
+            string config = args.Length > 0 ? args[0] : defaultConfig;
             if (config == "-help")
             {
                 help();
