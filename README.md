@@ -1,8 +1,8 @@
 # DBF to Postgresql Converter
-## 
+##
 ### DBF format
 dBASE III/IV
-FoxPro not supported
+####FoxPro not supported! Convert to dBase III/IV first!
 ### config.json example
 
 ```
