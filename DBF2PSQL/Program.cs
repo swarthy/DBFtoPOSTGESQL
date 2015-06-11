@@ -128,6 +128,12 @@ namespace DBF2PSQL
                     var value = record[fields[i].dbfName].Trim();
                     if (value == "" || (f.Header[fields[i].dbfName].ColumnType == DbfColumn.DbfColumnType.Date && value == "00-1-1-1")) //empty date bug
                         value = null;
+                    else
+                        if (f.Header[fields[i].dbfName].ColumnType == DbfColumn.DbfColumnType.Date)
+                        {
+                            string date = value as String;
+                            value = string.Format("{0}-{1}-{2} 01:00:00+06", date.Substring(0, 4), date.Substring(4, 2), date.Substring(6, 2)); //гори в аду javascript
+                        }
                     command.Parameters.AddWithValue("@" + fields[i].pgName, value);
                 }
                 try
