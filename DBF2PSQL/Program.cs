@@ -217,7 +217,16 @@ namespace DBF2PSQL
             serializer.RegisterConverters(new[] { new DynamicJsonConverter() });
             //try
             //{
-            dynamic obj = serializer.Deserialize(data, typeof(object));
+            dynamic obj = null;
+            try
+            {
+                obj = serializer.Deserialize(data, typeof(object));
+            }catch(Exception e)
+            {
+                Console.WriteLine("Ошибка чтения конфига: {0}", e);
+                Console.ReadLine();
+                return;
+            }
 
             if (obj.errorlog != null)
                 log = File.CreateText(obj.errorlog);
